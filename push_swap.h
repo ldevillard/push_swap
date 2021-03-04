@@ -6,16 +6,18 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 13:06:35 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 13:50:35 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "libft/libft.h"
-#include <stdio.h> //DEL
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-typedef struct	s_piles
+# include <unistd.h>
+# include <stdlib.h>
+# include "libft/libft.h"
+
+typedef struct s_piles
 {
 	int		*pa;
 	int		*pb;
@@ -38,3 +40,6 @@ void			ft_fill_commands(t_piles *piles, t_first *list);
 void			ft_error2(char *str);
 void			ft_print_commands(t_piles *piles);
 int				ft_pars_line(char *line);
+void			ft_free(t_piles *piles);
+
+#endif

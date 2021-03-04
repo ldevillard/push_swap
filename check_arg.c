@@ -6,13 +6,13 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 09:15:59 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 09:38:16 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 13:30:07 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_atoi_check(char *str, int neg)
+int	ft_atoi_check(char *str, int neg)
 {
 	int		i;
 	long	nbr;
@@ -41,11 +41,11 @@ int		ft_atoi_check(char *str, int neg)
 	return (1);
 }
 
-int		ft_check_arg(char *str)
+int	ft_check_arg(char *str)
 {
-	int i;
-	int neg;
-	int digit;
+	int	i;
+	int	neg;
+	int	digit;
 
 	i = 0;
 	neg = 0;

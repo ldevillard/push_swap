@@ -6,17 +6,17 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 09:41:34 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 13:23:44 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 13:51:26 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <string.h>
+
 void	ft_get_stdin(t_piles *piles)
 {
-	int ret;
-	char *line;
-	t_first *list;
+	int		ret;
+	char	*line;
+	t_first	*list;
 
 	list = init_list();
 	ret = get_next_line(&line);
@@ -35,9 +35,9 @@ void	ft_get_stdin(t_piles *piles)
 	clear_list(list);
 }
 
-int		ft_pars_line(char *line)
+int	ft_pars_line(char *line)
 {
-	int len;
+	int	len;
 
 	len = ft_strlen(line);
 	if ((ft_strncmp(line, "sa", ft_strlen(line)) == 0 && len == 2)
@@ -57,7 +57,7 @@ int		ft_pars_line(char *line)
 
 void	ft_print_commands(t_piles *piles)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	write(1, "\n", 1);
@@ -72,10 +72,10 @@ void	ft_print_commands(t_piles *piles)
 
 void	ft_fill_commands(t_piles *piles, t_first *list)
 {
-	int i;
-	int j;
-	char *buf;
-	t_list *values;
+	int		i;
+	int		j;
+	char	*buf;
+	t_list	*values;
 
 	values = list->first_index;
 	i = piles->size_list - 1;
@@ -94,77 +94,7 @@ void	ft_fill_commands(t_piles *piles, t_first *list)
 			piles->commands[i][j] = buf[j];
 			j++;
 		}
-		piles->commands[i][j] = '\0';
+		piles->commands[i--][j] = '\0';
 		values = values->next;
-		i--;
-	}
-		
-}
-
-void	clear_list(t_first *list)
-{
-	t_list *actuel = list->first_index;
-
-	while (actuel)
-	{
-		free(actuel->content);
-		free(actuel);
-		actuel = actuel->next;
-	}
-	free(list);
-}
-
-t_first	*init_list(void)
-{
-    t_list *list = malloc(sizeof(*list));
-    t_first *first = malloc(sizeof(*first));
-
-    if (list == NULL || first == NULL)
-    {
-        return (NULL);
-    }
-
-    list->content = 0;
-    list->next = NULL;
-    first->first_index = list;
-
-    return (first);
-}
-
-void insertion(t_first *ptr, void *content)
-{
-    /* Création du nouvel élément */
-    t_list *new = malloc(sizeof(*new));
-    if (ptr == NULL || new == NULL)
-		return ;
-    new->content = content;
-
-    /* Insertion de l'élément au début de la liste */
-    new->next = ptr->first_index;
-    ptr->first_index = new;
-}
-
-void afficherListe(t_first *liste)
-{
-    if (liste == NULL)
-    {
-        return ;
-    }
-
-    t_list *actuel = liste->first_index;
-
-    while (actuel)
-    {
-        printf("LINE : %s\n", actuel->content);
-        actuel = actuel->next;
-    }
-}
-
-void	ft_print_list(t_list *save)
-{
-	while (save)
-	{
-		printf("content : %s\n", save->content);
-		save = save->next;
 	}
 }
