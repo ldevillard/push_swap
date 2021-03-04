@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 09:52:20 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 14:39:40 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 15:07:55 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
+	str = NULL;
 	if (!s)
 		return (NULL);
 	if (start <= ft_strlen(s))

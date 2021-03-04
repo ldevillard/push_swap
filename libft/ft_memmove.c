@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 16:27:50 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 14:31:19 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 15:06:26 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_fill(char *dest, char *source, size_t len, int i)
 {
 	if (source > dest)
 	{
-		while (i < len)
+		while (i < (int)len)
 		{
 			dest[i] = source[i];
 			i++;

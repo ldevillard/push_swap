@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:20:57 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 14:55:48 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 15:05:47 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct s_first
+{
+	t_list *first_index;
+}				t_first;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -74,5 +79,6 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
+int				get_next_line(char **line);
 
 #endif

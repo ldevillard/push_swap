@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 14:39:00 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 14:56:00 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 15:07:24 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ char	*ft_strnstr(const char *hay, const char *needle, size_t len)
 	i = 0;
 	j = 0;
 	if (!needle[i])
-		return ((char *)haystack);
-	while (haystack[i] && i < len)
+		return ((char *)hay);
+	while (hay[i] && i < len)
 	{
 		j = 0;
-		while (haystack[i + j] == needle[j] && i + j < len)
+		while (hay[i + j] == needle[j] && i + j < len)
 		{
 			if (needle[j + 1] == '\0')
-				return ((char *)&haystack[i]);
+				return ((char *)&hay[i]);
 			j++;
 		}
 		i++;
