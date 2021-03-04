@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 12:41:34 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 13:06:35 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,7 @@ t_first			*init_list(void);
 void			insertion(t_first *ptr, void *content);
 void			afficherListe(t_first *liste);
 void			clear_list(t_first *list);
-void			ft_fill_commands(t_piles *piles);
+void			ft_fill_commands(t_piles *piles, t_first *list);
+void			ft_error2(char *str);
+void			ft_print_commands(t_piles *piles);
+int				ft_pars_line(char *line);
