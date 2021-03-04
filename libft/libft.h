@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/03 19:09:19 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 10:59:39 by ldevilla         ###   ########lyon.fr   */
+/*   Created: 2020/11/23 17:20:57 by ldevilla          #+#    #+#             */
+/*   Updated: 2021/03/04 14:55:48 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef	struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
-
-typedef struct	s_first
-{
-	t_list *first_index;
-}				t_first;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -48,8 +43,7 @@ int				ft_tolower(int c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-char			*ft_strnstr(const char *haystack,\
-				const char *needle, size_t len);
+char			*ft_strnstr(const char *hay, const char *needle, size_t len);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t count, size_t size);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
@@ -79,7 +73,6 @@ void			ft_lstadd_back(t_list **alst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void*));
-int				get_next_line(char **line);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 
 #endif

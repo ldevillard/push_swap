@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 11:14:36 by ldevilla          #+#    #+#             */
-/*   Updated: 2020/12/21 10:36:35 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 13:58:34 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	*set_base(unsigned int hexa, int base, char *str, int i)
 	return (str);
 }
 
-char		*ft_itoa_base(unsigned int nbr, int base)
+char	*ft_itoa_base(unsigned int nbr, int base)
 {
 	char			*str;
 	unsigned int	hexa;
@@ -42,7 +42,8 @@ char		*ft_itoa_base(unsigned int nbr, int base)
 		nbr /= base;
 		i++;
 	}
-	if (!(str = malloc(sizeof(char) * (i + 1))))
+	str = malloc(sizeof(char) * (i + 1));
+	if (!str)
 		return (NULL);
 	str[i] = '\0';
 	str = set_base(hexa, base, str, i);

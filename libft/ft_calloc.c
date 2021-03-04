@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevilla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 16:23:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2020/11/27 11:36:43 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 13:57:05 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void *to_alloc;
+	void	*to_alloc;
 
 	to_alloc = malloc(count * size);
 	if (to_alloc == NULL)

@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 15:46:18 by ldevilla          #+#    #+#             */
-/*   Updated: 2020/12/08 15:53:20 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 14:32:09 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr(int n)
 {
-	char i;
+	char	i;
 
 	if (n == -2147483648)
 		ft_putstr("-2147483648");

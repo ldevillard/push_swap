@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevilla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 10:54:14 by ldevilla          #+#    #+#             */
-/*   Updated: 2020/11/27 13:04:27 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 14:34:22 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t src_size;
-	size_t i;
+	size_t	src_size;
+	size_t	i;
 
 	if (!src && !dst)
 		return (0);

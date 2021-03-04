@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevilla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 09:15:26 by ldevilla          #+#    #+#             */
-/*   Updated: 2020/11/27 13:11:09 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 14:37:15 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		sep_check(char const *s1, char const *set)
+static int	sep_check(char const *s1, char const *set)
 {
-	int i;
-	int j;
-	int nop;
+	int	i;
+	int	j;
+	int	nop;
 
 	nop = 0;
 	i = 0;
@@ -32,9 +32,9 @@ static int		sep_check(char const *s1, char const *set)
 	return (0);
 }
 
-static int		set_count(int count, char const *s1, char const *set)
+static int	set_count(int count, char const *s1, char const *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	count = 0;
@@ -58,15 +58,16 @@ static int		set_count(int count, char const *s1, char const *set)
 	return (count);
 }
 
-static char		*nullstr(char *str)
+static char	*nullstr(char *str)
 {
-	if (!(str = malloc(sizeof(char) * 1)))
+	str = malloc(sizeof(char) * 1);
+	if (!str)
 		return (NULL);
 	str[0] = '\0';
 	return (str);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	int		count;
@@ -82,7 +83,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	str = NULL;
 	if (sep_check(s1, set) == 0)
 		return (nullstr(str));
-	if (!(str = malloc(sizeof(char) * (ft_strlen(s1) - count + 1))))
+	str = malloc(sizeof(char) * (ft_strlen(s1) - count + 1));
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (ft_ccheck(set, s1[i]) == 1)

@@ -6,15 +6,15 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 10:02:33 by ldevilla          #+#    #+#             */
-/*   Updated: 2020/12/16 10:05:56 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 14:41:55 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		count_n(long n)
+static int	count_n(long n)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (n > 9)
@@ -25,14 +25,20 @@ static int		count_n(long n)
 	return (i);
 }
 
-static void		check_n(long int *nb, int *neg, int *count)
+static void	check_n(long int *nb, int *neg, int *count)
 {
 	*nb *= -1;
 	*neg += 1;
 	*count += 1;
 }
 
-char			*ft_u_itoa(unsigned int n)
+static char	*ft_return_itoa(char *str, int count)
+{
+	str[count] = '\0';
+	return (ft_strrev(str));
+}
+
+char	*ft_u_itoa(unsigned int n)
 {
 	int		count;
 	int		neg;
@@ -47,7 +53,8 @@ char			*ft_u_itoa(unsigned int n)
 		check_n(&nb, &neg, &count);
 	count += count_n(nb);
 	i = 0;
-	if (!(str = malloc(sizeof(char) * (count + 1))))
+	str = malloc(sizeof(char) * (count + 1));
+	if (!str)
 		return (NULL);
 	if (neg > 0)
 		str[count - 1] = '-';
@@ -57,6 +64,5 @@ char			*ft_u_itoa(unsigned int n)
 		nb /= 10;
 	}
 	str[i] = nb % 10 + '0';
-	str[count] = '\0';
-	return (ft_strrev(str));
+	return (ft_return_itoa(str, count));
 }

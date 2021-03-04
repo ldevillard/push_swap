@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 15:45:32 by ldevilla          #+#    #+#             */
-/*   Updated: 2020/12/08 15:45:55 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 14:32:16 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr(char *s)
 {
-	int i;
+	int	i;
 
 	if (s != NULL)
 	{

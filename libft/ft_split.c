@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevilla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 12:02:13 by ldevilla          #+#    #+#             */
-/*   Updated: 2020/11/27 14:23:52 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 14:33:58 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		wc(char const *s, char c)
+static int	wc(char const *s, char c)
 {
-	int word;
-	int i;
+	int	word;
+	int	i;
 
 	word = 0;
 	i = 0;
@@ -31,7 +31,7 @@ static int		wc(char const *s, char c)
 	return (word);
 }
 
-static int		wl(char const *s, char c)
+static int	wl(char const *s, char c)
 {
 	int	i;
 	int	size;
@@ -46,7 +46,7 @@ static int		wl(char const *s, char c)
 	return (size);
 }
 
-static void		*free_tab(char **tab, int words)
+static void	*free_tab(char **tab, int words)
 {
 	int	i;
 
@@ -57,12 +57,12 @@ static void		*free_tab(char **tab, int words)
 	return (NULL);
 }
 
-static char		**cut(char const *s, int words, char c, char **tab)
+static char	**cut(char const *s, int words, char c, char **tab)
 {
 	int	i;
 	int	j;
 	int	w_size;
-	int k;
+	int	k;
 
 	i = 0;
 	k = 0;
@@ -71,7 +71,8 @@ static char		**cut(char const *s, int words, char c, char **tab)
 		while (s[k] == c)
 			k++;
 		w_size = wl(&s[k], c);
-		if (!(tab[i] = malloc(sizeof(char) * (w_size + 1))))
+		tab[i] = malloc(sizeof(char) * (w_size + 1));
+		if (!tab[i])
 			return (free_tab(tab, i));
 		j = 0;
 		while (j < w_size)
@@ -83,7 +84,7 @@ static char		**cut(char const *s, int words, char c, char **tab)
 	return (tab);
 }
 
-char			**ft_split(char	const *s, char c)
+char	**ft_split(char	const *s, char c)
 {
 	char	**tab;
 	int		words;
@@ -91,7 +92,8 @@ char			**ft_split(char	const *s, char c)
 	if (!s)
 		return (NULL);
 	words = wc(s, c);
-	if (!(tab = (char **)malloc(sizeof(char *) * (words + 1))))
+	tab = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!tab)
 		return (NULL);
 	tab = cut(s, words, c, tab);
 	return (tab);

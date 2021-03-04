@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ccheck.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevilla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 11:58:13 by ldevilla          #+#    #+#             */
-/*   Updated: 2020/12/07 12:27:23 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/04 13:57:25 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_ccheck(const char *set, char c)
+int	ft_ccheck(const char *set, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!set)
