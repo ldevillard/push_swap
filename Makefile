@@ -2,7 +2,9 @@ LIBFT = ./libft/libft.a
 
 NAME = checker
 
-SRCS = checker.c
+SRCS = checker.c\
+		check_arg.c\
+		get_stdin.c
 
 CC = gcc
 
