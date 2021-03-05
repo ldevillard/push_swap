@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/05 10:33:54 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 10:42:58 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,7 @@ void			ft_launch_commands(t_piles *piles, char *str);
 void			ft_swap_sa(t_piles *piles);
 void			ft_swap_sb(t_piles *piles);
 void			ft_swap_ss(t_piles *piles);
+void			ft_swap_pa(t_piles *piles);
+void			ft_swap_pb(t_piles *piles);
 
 #endif

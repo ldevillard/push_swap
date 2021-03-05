@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:25 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/05 10:22:12 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 11:03:24 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,22 @@ void	ft_print_tab(t_piles *piles, int size)
 	int		i;
 	char	*str;
 
+	(void)size;
+	write(1, "\nAAAA\n", 6);
 	i = 0;
-	while (i < size)
+	while (i < piles->sizea)
 	{
 		str = ft_itoa(piles->pa[i]);
+		write(1, str, ft_strlen(str));
+		write(1, "\n", 1);
+		free(str);
+		i++;
+	}
+	write(1, "\nBBBB\n", 6);
+	i = 0;
+	while (i < piles->sizeb)
+	{
+		str = ft_itoa(piles->pb[i]);
 		write(1, str, ft_strlen(str));
 		write(1, "\n", 1);
 		free(str);
