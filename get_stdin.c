@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 09:41:34 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 13:51:26 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 09:57:22 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_get_stdin(t_piles *piles)
 	free(line);
 	if (piles->size_list)
 		ft_fill_commands(piles, list);
-	ft_print_commands(piles);
+	//ft_print_commands(piles);
 	clear_list(list);
 }
 

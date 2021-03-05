@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:25 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 13:33:23 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 10:22:12 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ int	main(int ac, char **av)
 	if (!piles.pa)
 		ft_error();
 	ft_fillTab(&piles, ac - 1, &av[1]);
+	ft_check_dub(&piles, ac - 1);
 	ft_get_stdin(&piles);
+	ft_start_commands(&piles);
+	//ft_print_tab(&piles, ac - 1); //PRINT
 	ft_free(&piles);
 	return (0);
 }

@@ -6,7 +6,8 @@ SRCS = checker.c\
 		check_arg.c\
 		get_stdin.c\
 		liste.c\
-		ft_utils.c
+		ft_utils.c\
+		ft_commands.c
 
 CC = gcc
 

@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 09:15:59 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/04 13:30:07 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 10:04:28 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,25 @@ int	ft_check_arg(char *str)
 	if ((!digit && neg) || !ft_atoi_check(str, neg))
 		return (0);
 	return (1);
+}
+
+void	ft_check_dub(t_piles *piles, int size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	piles->size_tab = size;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (piles->pa[i] == piles->pa[j])
+				ft_error();
+			j++;
+		}
+		i++;
+	}
 }
