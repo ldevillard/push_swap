@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 09:57:36 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/05 16:06:44 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 16:12:43 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ void	ft_start_commands(t_piles *piles)
 	piles->sizea = piles->size_tab;
 	if (!piles->pb)
 		ft_error2("Malloc Error");
-	ft_print_tab(piles, 0);
-	write(1, "---------\n", 10);
+	//ft_print_tab(piles, 0);
+	//write(1, "---------\n", 10);
 	while (i < piles->size_list)
 	{
 		ft_launch_commands(piles, piles->commands[i]);
-		ft_print_tab(piles, 0);
-		write(1, "---------\n", 10);
+		//ft_print_tab(piles, 0);
+		//write(1, "---------\n", 10);
 		i++;
-	}	
+	}
 }
 
 void	ft_launch_commands(t_piles *piles, char *str)

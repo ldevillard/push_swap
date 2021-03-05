@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:25 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/05 11:03:24 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 16:18:59 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	ft_print_tab(t_piles *piles, int size)
 	char	*str;
 
 	(void)size;
-	write(1, "\nAAAA\n", 6);
+	write(1, "-----\n", 6);
+	write(1, "AAAA\n", 6);
 	i = 0;
 	while (i < piles->sizea)
 	{
@@ -52,6 +53,29 @@ void	ft_print_tab(t_piles *piles, int size)
 		free(str);
 		i++;
 	}
+	write(1, "-----\n", 6);
+}
+
+int	ft_check_end(t_piles *piles)
+{
+	int	i;
+	int j;
+
+	i = 0;
+	if (piles->sizeb)
+		return (0);
+	while (i < piles->sizea)
+	{
+		j = i + 1;
+		while (j < piles->sizea)
+		{
+			if (piles->pa[i] > piles->pa[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
 int	main(int ac, char **av)
@@ -65,7 +89,11 @@ int	main(int ac, char **av)
 	ft_check_dub(&piles, ac - 1);
 	ft_get_stdin(&piles);
 	ft_start_commands(&piles);
-	//ft_print_tab(&piles, ac - 1); //PRINT
+	ft_print_tab(&piles, ac - 1); //PRINT
+	if (!ft_check_end(&piles))
+		write(1, "KO\n", 3);
+	else
+		write(1, "OK\n", 3);
 	ft_free(&piles);
 	return (0);
 }
