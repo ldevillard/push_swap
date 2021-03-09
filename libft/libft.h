@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:20:57 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/08 15:14:56 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/08 15:55:52 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void*));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
 int				get_next_line(char **line);
+void			ft_rev_int_tab(int *tab, int size);
 
 #endif

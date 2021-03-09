@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/08 15:34:25 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/09 14:30:29 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,12 @@ int				ft_check_end(t_piles *piles);
 void		ft_sort_hub(t_piles *piles);
 void		ft_sort_three(t_piles *piles, t_first *list);
 void		ft_sort_two(t_piles *piles, t_first *list);
+void		ft_sort_twob(t_piles *piles, t_first *list);
 void		ft_print(t_piles *piles);
 int			is_sorted(t_piles *piles);
+int			is_sortedb(t_piles *piles);
+void		ft_sort(t_piles *piles, t_first *list);
+void		ft_sort_b(t_piles *piles, t_first *list);
+int			*ft_dup(int *tab, int *src, int size);
 
 #endif

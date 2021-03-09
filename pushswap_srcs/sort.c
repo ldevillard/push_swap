@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:15:57 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/08 15:46:35 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/09 14:32:11 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	ft_sort_hub(t_piles *piles)
 		ft_sort_three(piles, list);
 	else if (piles->sizea == 2)
 		ft_sort_two(piles, list);
+	else if (piles->sizea > 3)
+		ft_sort(piles, list);
 	ft_fill_commands(piles, list);
 	clear_list(list);
 }
@@ -66,6 +68,26 @@ int	is_sorted(t_piles *piles)
 		while (piles->pa[j])
 		{
 			if (piles->pa[i] > piles->pa[j])
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
+int	is_sortedb(t_piles *piles)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (piles->pb[i])
+	{
+		j = i + 1;
+		while (piles->pb[j])
+		{
+			if (piles->pb[i] < piles->pb[j])
 				return (0);
 			j++;
 		}
@@ -125,5 +147,15 @@ void	ft_sort_two(t_piles *piles, t_first *list)
 		insertion(list, "sa\n");
 		piles->size_list++;
 		ft_swap_sa(piles);
+	}
+}
+
+void	ft_sort_twob(t_piles *piles, t_first *list)
+{
+	if (piles->pb[0] < piles->pb[1])
+	{
+		insertion(list, "sb\n");
+		piles->size_list++;
+		ft_swap_sb(piles);
 	}
 }
