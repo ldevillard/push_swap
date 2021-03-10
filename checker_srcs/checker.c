@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:25 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/08 11:30:33 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/10 15:56:18 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,23 @@ void	ft_fillTab(t_piles *piles, int sizeTab, char **args)
 		piles->pa[i] = ft_atoi(args[i]);
 		i++;
 	}
+}
+
+static void	print_utils(t_piles *piles)
+{
+	int		i;
+	char	*str;
+
+	i = 0;
+	while (i < piles->sizeb)
+	{
+		str = ft_itoa(piles->pb[i]);
+		write(1, str, ft_strlen(str));
+		write(1, "\n", 1);
+		free(str);
+		i++;
+	}
+	write(1, "-----\n", 6);
 }
 
 void	ft_print_tab(t_piles *piles, int size)
@@ -44,22 +61,13 @@ void	ft_print_tab(t_piles *piles, int size)
 		i++;
 	}
 	write(1, "\nBBBB\n", 6);
-	i = 0;
-	while (i < piles->sizeb)
-	{
-		str = ft_itoa(piles->pb[i]);
-		write(1, str, ft_strlen(str));
-		write(1, "\n", 1);
-		free(str);
-		i++;
-	}
-	write(1, "-----\n", 6);
+	print_utils(piles);
 }
 
 int	ft_check_end(t_piles *piles)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	if (piles->sizeb)
@@ -82,6 +90,8 @@ int	main(int ac, char **av)
 {
 	t_piles	piles;
 
+	if (ac < 2)
+		return (0);
 	piles.pa = malloc(sizeof(int) * ac - 1);
 	if (!piles.pa)
 		ft_error();
@@ -89,7 +99,7 @@ int	main(int ac, char **av)
 	ft_check_dub(&piles, ac - 1);
 	ft_get_stdin(&piles);
 	ft_start_commands(&piles);
-	ft_print_tab(&piles, ac - 1); //PRINT
+	ft_print_tab(&piles, ac - 1);
 	if (!ft_check_end(&piles))
 		write(1, "KO\n", 3);
 	else

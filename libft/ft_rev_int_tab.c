@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:55:01 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/08 15:55:14 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/10 14:24:45 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_rev_int_tab(int *tab, int size)
 {
-	int a;
-	int b;
-	int save;
+	int	a;
+	int	b;
+	int	save;
 
 	a = 0;
 	b = size - 1;

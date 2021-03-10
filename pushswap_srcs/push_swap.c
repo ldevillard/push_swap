@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 11:33:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/09 14:17:22 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/10 15:54:04 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,12 @@ int	main(int ac, char **av)
 	piles.pb = malloc(sizeof(int) * ac - 1);
 	if (!piles.pa || !piles.pb)
 		ft_error();
+	if (ac < 3)
+		return (0);
 	ft_fillTab(&piles, ac - 1, &av[1]);
 	ft_check_dub(&piles, ac - 1);
 	ft_sort_hub(&piles);
 	ft_print(&piles);
 	ft_free(&piles);
-    return (0);
+	return (0);
 }

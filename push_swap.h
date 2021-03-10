@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/10 14:02:39 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/10 15:07:04 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,17 @@ void			ft_swap_rrb(t_piles *piles);
 void			ft_swap_rrr(t_piles *piles);
 int				ft_check_end(t_piles *piles);
 
-void		ft_sort_hub(t_piles *piles);
-void		ft_sort_three(t_piles *piles, t_first *list);
-void		ft_sort_two(t_piles *piles, t_first *list);
-void		ft_sort_twob(t_piles *piles, t_first *list);
-void		ft_print(t_piles *piles);
-int			is_sorted(t_piles *piles);
-int			is_sortedb(t_piles *piles);
-void		ft_sort(t_piles *piles, t_first *list);
-void		ft_sort_b(t_piles *piles, t_first *list);
-int			*ft_dup(int *tab, int *src, int size);
-void		ft_sort_five(t_piles *piles, t_first *list);
-void		ft_sort_four_or_five(t_piles *piles, t_first *list);
+void			ft_sort_hub(t_piles *piles);
+void			ft_sort_three(t_piles *piles, t_first *list);
+void			ft_sort_two(t_piles *piles, t_first *list);
+void			ft_sort_twob(t_piles *piles, t_first *list);
+void			ft_print(t_piles *piles);
+int				is_sorted(t_piles *piles);
+int				is_sortedb(t_piles *piles);
+void			ft_sort(t_piles *piles, t_first *list);
+void			ft_sort_b(t_piles *piles, t_first *list);
+int				*ft_dup(int *tab, int *src, int size);
+void			ft_sort_five(t_piles *piles, t_first *list);
+void			ft_five(t_piles *piles, t_first *list, int *tab, int size);
 
 #endif

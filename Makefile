@@ -9,7 +9,9 @@ SRCS_CHECKER = checker_srcs/checker.c\
 				checker_srcs/get_stdin.c\
 				checker_srcs/liste.c\
 				checker_srcs/ft_utils.c\
-				checker_srcs/ft_commands.c
+				checker_srcs/ft_commands.c\
+				checker_srcs/ft_commands2.c\
+				checker_srcs/ft_commands3.c
 
 SRCS_PUSHSWAP = pushswap_srcs/push_swap.c\
 				pushswap_srcs/ft_utils.c\
@@ -18,7 +20,10 @@ SRCS_PUSHSWAP = pushswap_srcs/push_swap.c\
 				pushswap_srcs/sort.c\
 				pushswap_srcs/liste.c\
 				pushswap_srcs/algo.c\
-				pushswap_srcs/sort_five.c
+				pushswap_srcs/sort_five.c\
+				pushswap_srcs/ft_commands2.c\
+				pushswap_srcs/ft_commands3.c\
+				pushswap_srcs/sort_utils.c
 
 CC = gcc
 
