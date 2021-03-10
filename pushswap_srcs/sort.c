@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:15:57 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/09 14:55:07 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/10 13:58:46 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,12 @@ void	ft_sort_hub(t_piles *piles)
 	t_first *list;
 
 	list = init_list();
-	if (piles->sizea == 3)
-		ft_sort_three(piles, list);
-	else if (piles->sizea == 2)
-		ft_sort_two(piles, list);
+	if (piles->sizea <= 5)
+		ft_sort_five(piles, list);
+	//else if (piles->sizea == 3)
+	//	ft_sort_three(piles, list);
+	//else if (piles->sizea == 2)
+	//	ft_sort_two(piles, list);
 	//else if (piles->sizea > 3)
 	//	ft_sort(piles, list);
 	ft_fill_commands(piles, list);
@@ -62,10 +64,10 @@ int	is_sorted(t_piles *piles)
 	int	j;
 
 	i = 0;
-	while (piles->pa[i])
+	while (i < piles->sizea)
 	{
 		j = i + 1;
-		while (piles->pa[j])
+		while (j < piles->sizea)
 		{
 			if (piles->pa[i] > piles->pa[j])
 				return (0);
@@ -82,10 +84,10 @@ int	is_sortedb(t_piles *piles)
 	int	j;
 
 	i = 0;
-	while (piles->pb[i])
+	while (i < piles->sizeb)
 	{
 		j = i + 1;
-		while (piles->pb[j])
+		while (j < piles->sizeb)
 		{
 			if (piles->pb[i] < piles->pb[j])
 				return (0);

@@ -17,7 +17,8 @@ SRCS_PUSHSWAP = pushswap_srcs/push_swap.c\
 				pushswap_srcs/ft_commands.c\
 				pushswap_srcs/sort.c\
 				pushswap_srcs/liste.c\
-				pushswap_srcs/algo.c
+				pushswap_srcs/algo.c\
+				pushswap_srcs/sort_five.c
 
 CC = gcc
 
