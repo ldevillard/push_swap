@@ -34,30 +34,35 @@ INCLUDE = push_swap.h
 OBJS = $(SRCS_CHECKER:.c=.o) $(SRCS_PUSHSWAP:.c=.o)
 
 %.o: %.c $(INCLUDE)
-		$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
+		@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
-		$(MAKE) -C ./libft
-		cp libft/libft.a .
-		$(CC) -o $(NAME) $(SRCS_CHECKER) $(LIBFT)
-		$(CC) -o $(NAME2) $(SRCS_PUSHSWAP) $(LIBFT)
+		@echo "\033[92mCOMPILING..\033[0m"
+		@$(MAKE) -C ./libft
+		@echo "\033[92m...\033[0m"
+		@cp libft/libft.a .
+		@$(CC) -o $(NAME) $(SRCS_CHECKER) $(LIBFT)
+		@$(CC) -o $(NAME2) $(SRCS_PUSHSWAP) $(LIBFT)
+		@echo "\033[92mFINISHED\033[0m"
 
 all : $(NAME)
 
 clean :
-		$(MAKE) clean -C ./libft 
-		rm -rf *.o
-		rm -rf checker_srcs/*.o
-		rm -rf pushswap_srcs/*.o
+		@$(MAKE) clean -C ./libft 
+		@rm -rf *.o
+		@rm -rf checker_srcs/*.o
+		@rm -rf pushswap_srcs/*.o
+		@echo "\033[91m...\033[0m"
 
 fclean : clean
-		$(MAKE) fclean -C ./libft
-		rm -rf *.o
-		rm -rf checker_srcs/*.o
-		rm -rf pushswap_srcs/*.o
-		rm -rf *.a
-		rm -rf checker
-		rm -rf push_swap
+		@$(MAKE) fclean -C ./libft
+		@rm -rf *.o
+		@rm -rf checker_srcs/*.o
+		@rm -rf pushswap_srcs/*.o
+		@rm -rf *.a
+		@rm -rf checker
+		@rm -rf push_swap
+		@echo "\033[91mCLEANING FINISHED\033[0m"
 
 re : fclean all
 

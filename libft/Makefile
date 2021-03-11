@@ -12,7 +12,6 @@ SRCS = ft_memset.c\
 		ft_memmove.c\
 		ft_memchr.c\
 		ft_strlen.c\
-		ft_memcmp.c\
 		ft_strdup.c\
 		ft_strlcpy.c\
 		ft_isalpha.c\
@@ -62,20 +61,20 @@ SRCS = ft_memset.c\
 OBJS = $(SRCS:.c=.o)
 
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I$(INCS)
+	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I$(INCS)
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(HEADER)
-	$(LIBC) $(NAME) $(OBJS)
-	$(LIBI) $(NAME)
+	@$(LIBC) $(NAME) $(OBJS)
+	@$(LIBI) $(NAME)
 
 re: fclean all
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 .PHONY: clean fclean re all
