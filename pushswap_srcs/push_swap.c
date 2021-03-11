@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 11:33:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/10 15:54:04 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/11 15:05:02 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ int	main(int ac, char **av)
 	ft_sort_hub(&piles);
 	ft_print(&piles);
 	ft_free(&piles);
+	exit(0);
 	return (0);
 }

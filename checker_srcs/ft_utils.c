@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:32:27 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/08 11:30:39 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/11 12:04:00 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,12 @@ void	ft_free(t_piles *piles)
 	if (piles->commands)
 	{
 		while (i < piles->size_list)
-			free(piles->commands[i++]);
-		free(piles->commands);
+		{
+			if (piles->commands[i])
+				free(piles->commands[i++]);
+		}
+		if (piles->size_list)
+			free(piles->commands);
 	}
 }
 

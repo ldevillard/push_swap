@@ -23,11 +23,12 @@ SRCS_PUSHSWAP = pushswap_srcs/push_swap.c\
 				pushswap_srcs/sort_five.c\
 				pushswap_srcs/ft_commands2.c\
 				pushswap_srcs/ft_commands3.c\
-				pushswap_srcs/sort_utils.c
+				pushswap_srcs/sort_utils.c\
+				pushswap_srcs/big_sort.c
 
 CC = gcc
 
-FLAGS = -c -Wall -Wextra -Werror 
+FLAGS = -c -g -fsanitize=address -Wall -Wextra -Werror 
 
 INCLUDE = push_swap.h
 
