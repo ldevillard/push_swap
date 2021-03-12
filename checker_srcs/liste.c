@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:41:30 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/11 11:57:33 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 09:47:10 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 void	clear_list(t_first *list)
 {
 	t_list	*actuel;
+	t_list	*buf;
 
 	actuel = list->first_index;
 	while (actuel)
 	{
-		free(actuel->content);
-		free(actuel);
+		buf = actuel;
 		actuel = actuel->next;
+		free(buf->content);
+		free(buf);
 	}
 	free(list);
 }

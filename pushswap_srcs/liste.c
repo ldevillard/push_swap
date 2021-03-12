@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:41:30 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/11 15:08:33 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 09:49:14 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 void	clear_list(t_first *list)
 {
 	t_list	*actuel;
+	t_list	*buf;
 
 	actuel = list->first_index;
 	while (actuel)
 	{
-		free(actuel);
+		buf = actuel;
 		actuel = actuel->next;
+		free(buf);
 	}
 	free(list);
 }
@@ -45,10 +47,8 @@ void	insertion(t_first *ptr, void *content)
 	t_list	*new;
 
 	new = malloc(sizeof(*new));
-	if (!new)
+	if (!new || !ptr)
 		ft_error2("Malloc Error");
-	if (ptr == NULL || new == NULL)
-		return ;
 	new->content = content;
 	new->next = ptr->first_index;
 	ptr->first_index = new;

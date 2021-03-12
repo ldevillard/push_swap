@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 10:07:43 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/11 13:32:54 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/11 16:10:03 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ void	ft_push_med(t_piles *piles, t_first *list, int size)
 	{
 		if (piles->pa[0] < piles->med)
 		{
-			insertion(list, "pb\n");
+			insertion(list, "pb\n\0");
 			piles->size_list++;
 			ft_swap_pb(piles);
 			i++;
 		}
 		else
 		{
-			insertion(list, "ra\n");
+			insertion(list, "ra\n\0");
 			piles->size_list++;
 			ft_swap_ra(piles);
 		}
@@ -56,21 +56,21 @@ void	ft_push_med_up(t_piles *piles, t_first *list, int size)
 	{
 		if (piles->pa[0] >= piles->med)
 		{
-			insertion(list, "pb\n");
+			insertion(list, "pb\n\0");
 			piles->size_list++;
 			ft_swap_pb(piles);
 			i++;
 		}
 		else
 		{
-			insertion(list, "ra\n");
+			insertion(list, "ra\n\0");
 			piles->size_list++;
 			ft_swap_ra(piles);
 		}
 	}
 	if (piles->pa[0] >= piles->med)
 	{
-		insertion(list, "pb\n");
+		insertion(list, "pb\n\0");
 		piles->size_list++;
 		ft_swap_pb(piles);
 		i++;
@@ -145,11 +145,11 @@ void	ft_pa_bigger(t_piles *piles, t_first *list)
 	{
 		while (piles->pb[0] != piles->biggest)
 		{
-			insertion(list, "rb\n");
+			insertion(list, "rb\n\0");
 			piles->size_list++;
 			ft_swap_rb(piles);
 		}
-		insertion(list, "pa\n");
+		insertion(list, "pa\n\0");
 		piles->size_list++;
 		ft_swap_pa(piles);
 	}
@@ -157,11 +157,11 @@ void	ft_pa_bigger(t_piles *piles, t_first *list)
 	{
 		while (piles->pb[0] != piles->biggest)
 		{
-			insertion(list, "rrb\n");
+			insertion(list, "rrb\n\0");
 			piles->size_list++;
 			ft_swap_rrb(piles);
 		}
-		insertion(list, "pa\n");
+		insertion(list, "pa\n\0");
 		piles->size_list++;
 		ft_swap_pa(piles);
 	}
@@ -173,12 +173,12 @@ void	ft_pa_smaller(t_piles *piles, t_first *list)
 	{
 		while (piles->pb[0] != piles->smallest)
 		{
-			insertion(list, "rb\n");
+			insertion(list, "rb\n\0");
 			piles->size_list++;
 			ft_swap_rb(piles);
 		}
-		insertion(list, "pa\n");
-		insertion(list, "ra\n");
+		insertion(list, "pa\n\0");
+		insertion(list, "ra\n\0");
 		piles->size_list += 2;
 		ft_swap_pa(piles);
 		ft_swap_ra(piles);
@@ -187,12 +187,12 @@ void	ft_pa_smaller(t_piles *piles, t_first *list)
 	{
 		while (piles->pb[0] != piles->smallest)
 		{
-			insertion(list, "rrb\n");
+			insertion(list, "rrb\n\0");
 			piles->size_list++;
 			ft_swap_rrb(piles);
 		}
-		insertion(list, "pa\n");
-		insertion(list, "ra\n");
+		insertion(list, "pa\n\0");
+		insertion(list, "ra\n\0");
 		piles->size_list += 2;
 		ft_swap_pa(piles);
 		ft_swap_ra(piles);
@@ -217,7 +217,7 @@ void	ft_set_sort(t_piles *piles, t_first *list)
 	{
 		while (piles->pa[0] != piles->smallest)
 		{
-			insertion(list, "ra\n");
+			insertion(list, "ra\n\0");
 			piles->size_list++;
 			ft_swap_ra(piles);
 		}
@@ -226,7 +226,7 @@ void	ft_set_sort(t_piles *piles, t_first *list)
 	{
 		while (piles->pa[0] != piles->smallest)
 		{
-			insertion(list, "rra\n");
+			insertion(list, "rra\n\0");
 			piles->size_list++;
 			ft_swap_rra(piles);
 		}
@@ -248,7 +248,7 @@ void	ft_big_sort(t_piles *piles, t_first *list)
 	{
 		if (piles->sizeb == 1)
 		{
-			insertion(list, "pa\n");
+			insertion(list, "pa\n\0");
 			ft_swap_pa(piles);
 			piles->size_list++;
 			break ;
@@ -265,7 +265,7 @@ void	ft_big_sort(t_piles *piles, t_first *list)
 	{
 		if (piles->sizeb == 1)
 		{
-			insertion(list, "pa\n");
+			insertion(list, "pa\n\0");
 			ft_swap_pa(piles);
 			piles->size_list++;
 			break ;
