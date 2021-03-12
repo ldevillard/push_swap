@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:41:30 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/12 09:47:10 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 10:06:00 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	clear_list(t_first *list)
 	{
 		buf = actuel;
 		actuel = actuel->next;
-		free(buf->content);
 		free(buf);
 	}
 	free(list);
