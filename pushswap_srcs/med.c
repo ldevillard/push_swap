@@ -6,33 +6,22 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:31:55 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/12 12:49:10 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:43:12 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	find_quarter(t_piles *piles)
-{
-	//int	*tab;
-	printf("%d\n", piles->sizea);
-	//tab = NULL;
-	//tab = ft_dup(tab, piles->pa, piles->sizea);
-	//piles->first_quart = tab[piles->sizea / 4];
-	//piles->sec_quart = tab[(piles->sizea / 4) * 3];
-	//free(tab);
-}
-
-int	find_med(t_piles *piles)
+void	find_med(t_piles *piles)
 {
 	int	*tab;
-	int	ret;
 
 	tab = NULL;
 	tab = ft_dup(tab, piles->pa, piles->sizea);
-	ret = tab[piles->sizea / 2];
+	piles->med = tab[piles->sizea / 2];
+	piles->quart_one = tab[piles->sizea / 4];
+	piles->quart_two = tab[(piles->sizea / 4) * 3];
 	free(tab);
-	return (ret);
 }
 
 void	ft_push_med(t_piles *piles, t_first *list, int size)

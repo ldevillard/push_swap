@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:15:57 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/12 13:40:10 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 14:59:37 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_sort_hub(t_piles *piles)
 	list = init_list();
 	if (piles->sizea <= 5)
 		ft_sort_five(piles, list);
-	else if (piles->sizea > 100)
+	else if (piles->sizea <= 100)
 		ft_big_sort(piles, list);
 	else
 		ft_insane_sort(piles, list);

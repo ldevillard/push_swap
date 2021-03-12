@@ -6,13 +6,13 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 10:07:43 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/12 10:47:03 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 15:20:47 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	swap_set_sort(t_piles *piles, t_first *list)
+void	swap_set_sort(t_piles *piles, t_first *list)
 {
 	if (piles->s_ind <= piles->sizea / 2)
 	{
@@ -82,7 +82,7 @@ void	ft_big_sort(t_piles *piles, t_first *list)
 	if (is_sorted(piles))
 		return ;
 	size = piles->sizea / 2;
-	piles->med = find_med(piles);
+	find_med(piles);
 	ft_push_med(piles, list, size);
 	while (piles->sizeb)
 	{

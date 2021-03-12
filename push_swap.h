@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/12 13:37:52 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 15:20:55 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int				*ft_dup(int *tab, int *src, int size);
 void			ft_sort_five(t_piles *piles, t_first *list);
 void			ft_five(t_piles *piles, t_first *list, int *tab, int size);
 void			ft_big_sort(t_piles *piles, t_first *list);
-int				find_med(t_piles *piles);
+void			find_med(t_piles *piles);
 void			ft_push_med(t_piles *piles, t_first *list, int size);
 void			ft_find_bs(t_piles *piles);
 int				choose_sb(t_piles *piles);
@@ -91,6 +91,7 @@ void			ft_pa_smaller(t_piles *piles, t_first *list);
 void			ft_push_med_up(t_piles *piles, t_first *list, int size);
 void			ft_set_sort(t_piles *piles, t_first *list);
 void			ft_insane_sort(t_piles *piles, t_first *list);
-void			find_quarter(t_piles *piles);
+void			ft_push_quarters(t_piles *piles, t_first *list, int step);
+void			swap_set_sort(t_piles *piles, t_first *list);
 
 #endif
