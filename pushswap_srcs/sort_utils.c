@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:37:48 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/12 09:46:02 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:37:32 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_fill_commands(t_piles *piles, t_first *list)
 	piles->commands = malloc(sizeof(char *) * piles->size_list);
 	if (!piles->commands)
 		ft_error2("Malloc Error");
-	while (i >= 0 && values)
+	while (i >= 0)
 	{
 		buf = values->content;
 		piles->commands[i] = malloc(sizeof(char) * ft_strlen(buf) + 1);

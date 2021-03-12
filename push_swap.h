@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/12 09:47:45 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:37:52 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_piles
 	int		s_ind;
 	int		b_ind;
 	int		op_v;
+	int		quart_one;
+	int		quart_two;
 }				t_piles;
 
 int				ft_check_arg(char *str);
@@ -88,5 +90,7 @@ void			ft_pa_bigger(t_piles *piles, t_first *list);
 void			ft_pa_smaller(t_piles *piles, t_first *list);
 void			ft_push_med_up(t_piles *piles, t_first *list, int size);
 void			ft_set_sort(t_piles *piles, t_first *list);
+void			ft_insane_sort(t_piles *piles, t_first *list);
+void			find_quarter(t_piles *piles);
 
 #endif

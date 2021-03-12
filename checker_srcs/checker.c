@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:25 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/11 15:43:42 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 13:38:13 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,9 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	piles.pa = malloc(sizeof(int) * ac - 1);
+	piles.size_list = 0;
 	if (!piles.pa)
-		ft_error();
+		ft_error2("Malloc Error");
 	ft_fillTab(&piles, ac - 1, &av[1]);
 	ft_check_dub(&piles, ac - 1);
 	ft_get_stdin(&piles);
