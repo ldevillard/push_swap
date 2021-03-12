@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 09:41:34 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/12 09:59:50 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/12 10:29:16 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	ft_fill_commands(t_piles *piles, t_first *list)
 		ft_error2("Malloc Error");
 	while (i >= 0)
 	{
-		buf = ft_strdup(values->content);
+		buf = values->content;
 		piles->commands[i] = malloc(sizeof(char) * ft_strlen(buf) + 1);
 		if (!piles->commands[i])
 			ft_error2("Malloc Error");
@@ -94,8 +94,6 @@ void	ft_fill_commands(t_piles *piles, t_first *list)
 			j++;
 		}
 		piles->commands[i--][j] = '\0';
-		free(values->content);
-		free(buf);
 		values = values->next;
 	}
 }

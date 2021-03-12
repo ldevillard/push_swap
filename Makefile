@@ -24,7 +24,10 @@ SRCS_PUSHSWAP = pushswap_srcs/push_swap.c\
 				pushswap_srcs/ft_commands2.c\
 				pushswap_srcs/ft_commands3.c\
 				pushswap_srcs/sort_utils.c\
-				pushswap_srcs/big_sort.c
+				pushswap_srcs/big_sort.c\
+				pushswap_srcs/med.c\
+				pushswap_srcs/big_and_small.c\
+				pushswap_srcs/choose_sb.c
 
 CC = gcc
 
