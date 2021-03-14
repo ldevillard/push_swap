@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 12:29:05 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/12 15:21:23 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/14 10:07:43 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@ void	ft_insane_sort(t_piles *piles, t_first *list)
 {
 	int	i;
 	int	size;
+	int	j;
+	float	sizetot;
 
 	i = 0;
+	j = 0;
 	size = piles->sizea / 4;
+	sizetot = piles->sizea;
 	if (is_sorted(piles))
 		return ;
 	find_med(piles);
@@ -27,7 +31,7 @@ void	ft_insane_sort(t_piles *piles, t_first *list)
 	{
 		if (piles->pa[0] < piles->quart_one)
 		{
-			insertion(list, "pb\n\0");
+			insertion(list, "pb\n");
 			piles->size_list++;
 			ft_swap_pb(piles);
 			i++;
@@ -38,6 +42,9 @@ void	ft_insane_sort(t_piles *piles, t_first *list)
 			piles->size_list++;
 			ft_swap_ra(piles);
 		}
+		if (j > sizetot)
+			break ;
+		j++;
 	}
 	//return first quart
 	while (piles->sizeb)
@@ -56,8 +63,9 @@ void	ft_insane_sort(t_piles *piles, t_first *list)
 			ft_pa_smaller(piles, list);
 	}
 	ft_set_sort(piles, list);
+	j = 0;
 	//Push second quarter
-	while (i < size * 2)
+	while (i < sizetot / 2)
 	{
 		if (piles->pa[0] < piles->med && piles->pa[0] >= piles->quart_one)
 		{
@@ -72,6 +80,9 @@ void	ft_insane_sort(t_piles *piles, t_first *list)
 			piles->size_list++;
 			ft_swap_ra(piles);
 		}
+		if (j > sizetot)
+			break ;
+		j++;
 	}
 	ft_set_sort(piles, list);
 	//return second quart
@@ -92,7 +103,7 @@ void	ft_insane_sort(t_piles *piles, t_first *list)
 	}
 	ft_set_sort(piles, list);
 
-
+	j = 0;
 	//Push third quarter
 	while (i < size * 3)
 	{
@@ -109,6 +120,9 @@ void	ft_insane_sort(t_piles *piles, t_first *list)
 			piles->size_list++;
 			ft_swap_ra(piles);
 		}
+		if (j > sizetot)
+			break ;
+		j++;
 	}
 	ft_set_sort(piles, list);
 	//return third quart
@@ -129,11 +143,11 @@ void	ft_insane_sort(t_piles *piles, t_first *list)
 	}
 	ft_set_sort(piles, list);
 
-
+	j = 0;
 	//Push four quarter
-	while (i < size * 4)
+	while (i < sizetot)
 	{
-		if (piles->pa[0] <= size * 4 && piles->pa[0] >= piles->quart_two)
+		if (piles->pa[0] <= sizetot && piles->pa[0] >= piles->quart_two)
 		{
 			insertion(list, "pb\n\0");
 			piles->size_list++;
@@ -146,6 +160,9 @@ void	ft_insane_sort(t_piles *piles, t_first *list)
 			piles->size_list++;
 			ft_swap_ra(piles);
 		}
+		if (j > sizetot)
+			break ;
+		j++;
 	}
 	ft_set_sort(piles, list);
 	//return four quart
