@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/14 09:48:08 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 10:06:30 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,10 @@ void			ft_pa_smaller(t_piles *piles, t_first *list);
 void			ft_push_med_up(t_piles *piles, t_first *list, int size);
 void			ft_set_sort(t_piles *piles, t_first *list);
 void			ft_insane_sort(t_piles *piles, t_first *list);
-void			ft_push_quarters(t_piles *piles, t_first *list, int step);
+void			ft_return_quarters(t_piles *piles, t_first *list);
 void			swap_set_sort(t_piles *piles, t_first *list);
+void			sec_quart(t_piles *piles, t_first *list, int *i, int sizetot);
+void			thi_quart(t_piles *piles, t_first *list, int *i, int sizetot);
+void			fou_quart(t_piles *piles, t_first *list, int *i, int sizetot);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:31:55 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/14 09:48:04 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 09:38:50 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	find_med(t_piles *piles)
 	tab = ft_dup(tab, piles->pa, piles->sizea);
 	piles->med = tab[piles->sizea / 2];
 	piles->quart_one = tab[piles->sizea / 4];
-	piles->quart_two = tab[(piles->sizea / 4) * 3];
+	piles->quart_two = tab[(piles->sizea / 4)*3];
 	free(tab);
 }
 
