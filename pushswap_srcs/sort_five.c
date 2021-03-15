@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 13:30:42 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/10 15:07:00 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 10:41:50 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,15 @@ void	ft_sort_five(t_piles *piles, t_first *list)
 	tab = ft_dup(tab, piles->pa, piles->sizea);
 	size = piles->sizea / 2;
 	if (piles->sizea == 2)
+	{
+		free(tab);
 		ft_sort_two(piles, list);
+	}
 	else if (piles->sizea == 3)
+	{
+		free(tab);
 		ft_sort_three(piles, list);
+	}
 	else
 		ft_five(piles, list, tab, size);
 }
