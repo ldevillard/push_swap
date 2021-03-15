@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:25 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/15 10:27:23 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 10:53:38 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ int	main(int ac, char **av)
 	ft_check_dub(&piles, ac - 1);
 	ft_get_stdin(&piles);
 	ft_start_commands(&piles);
-	//ft_print_tab(&piles, ac - 1);
 	if (!ft_check_end(&piles))
 		write(1, "KO\n", 3);
 	else
