@@ -6,7 +6,7 @@
 /*   By: ldevilla <ldevilla@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:03:45 by ldevilla          #+#    #+#             */
-/*   Updated: 2021/03/15 10:06:30 by ldevilla         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 13:55:54 by ldevilla         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft/libft.h"
-# include <stdio.h> //DELETE
+# include <stdio.h>
+# include <stdbool.h>
 
 typedef struct s_piles
 {
