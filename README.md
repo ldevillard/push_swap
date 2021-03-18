@@ -48,13 +48,18 @@ ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./check
 - When all number lass than med are pushed on B -> start sorting
 - Until B isn't empty, i find the biggest and the smallest number of B
 - Then dertemine wich is closer to the top and set the closer on the top of B
-- Then if the closer was the smallest, push it to the bottom of A -> pa, ra else push it to the top -> pa
-- Finally, do the exact same thing fot the numbers that are bigger or equal than med.
+- Then if the closer was the smallest, push it to the bottom of A -> pa, ra else push it to the top -> pa 
+- When B is empty set the smaller of A at the top
+- Finally, do the exact same thing fot the numbers that are bigger or equal than med, and at the and, don't forget to set the smaller at the topof A -> ra.
 ## V : Bigger than hundred
 - Same algorithm but i do it with quarters too
 - So, find q1, med and q2 with the dup tab
 - Then same but do it less than q1
-- Sort and repush to A, then do it less than med and bigger or equal than q1..
+- Sort and repush to A and set the smallest at the top, then do it less than med and bigger or equal than q1..
+- Set the smaller
 - Same less than q3 and >= med
+- Set the smaller
 - Same less than the size of stack A and >= q3
+- Set the smaller
+- SORTED !
 #
