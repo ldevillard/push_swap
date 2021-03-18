@@ -43,7 +43,7 @@ ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./check
 ## IV : Hundred or less 
 - First, i create a dup of stack A
 - Then i sort this dup to find the median (tab[size / 2])
-- Free this dub and start the algorithm
+- Free this dup and start the algorithm
 - if the top of A is less than med -> pb else ra
 - When all number lass than med are pushed on B -> start sorting
 - Until B isn't empty, i find the biggest and the smallest number of B
