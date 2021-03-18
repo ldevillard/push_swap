@@ -54,7 +54,7 @@ ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./check
 - Same algorithm but i do it with quarters too
 - So, find q1, med and q2 with the dup tab
 - Then same but do it less than q1
-- Sort and repush to A, then do it less than med..
-- Same less than q3
-- Same less than the size of pa
+- Sort and repush to A, then do it less than med and bigger or equal than q1..
+- Same less than q3 and >= med
+- Same less than the size of stack A and >= q3
 #
